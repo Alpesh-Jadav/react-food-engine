@@ -40,7 +40,16 @@ const App= () => {
 
       const updateSearch = e => {
 
-        setSearch(e.target.value)
+        if(e.target.value){
+          setSearch(e.target.value)
+        }
+        
+        else{
+
+          setSearch('')
+
+         
+        }
         
         
         
@@ -63,9 +72,18 @@ const App= () => {
       <button type="submit" className="search-button">Search</button>
       
       </form>
+  
+  
+    
+    
       <div className="recipes">
+
+        
          {recipes.map((item,index) => (
-         <Recipe 
+
+          
+        
+         <Recipe
           key={index}
           title={item.recipe.label}
           calories={item.recipe.calories} 
@@ -74,7 +92,9 @@ const App= () => {
           />
 
       ))}
-      </div>
+      </div> 
+      
+     
      
       
     </div>
